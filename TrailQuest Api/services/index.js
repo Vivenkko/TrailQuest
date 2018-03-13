@@ -1,4 +1,3 @@
-
 const jwt = require('jwt-simple');
 const bcrypt = require('bcrypt-nodejs');
 const moment = require('moment');
@@ -17,11 +16,8 @@ module.exports.createToken = (user) => {
 };
 
 module.exports.decodeToken = (token) => {
-
     const decoded = new Promise((res, rej) => {
-
         try {
-
             const payload = jwt.decode(token, config.SECRET_TOKEN);
 
             if (payload.exp <= moment().unix()) {
@@ -30,18 +26,12 @@ module.exports.decodeToken = (token) => {
                 res(payload.sub);
             }
 
-
         } catch (err) {
-
             rej({
                status: 500,
                mensaje: 'El token no es válido'
             });
-
         }
-
     });
-
     return decoded;
-
 };

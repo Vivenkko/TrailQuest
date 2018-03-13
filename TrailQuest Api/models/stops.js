@@ -2,14 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let stopsSchema = new Schema({
-    titulo: String,
-    descripcion: String,
-    autor: {type: Schema.ObjectId, ref: 'User'},
-    puntuacion: Number,
-    dificultad:    { type: String, enum:
-            ['Fácil', 'Medio', 'Difícil', 'Desafiante']
-    },
-    favorito: Boolean
+    title: String,
+    description: String,
+    picture: String,
+    location: String
 });
 
 module.exports =

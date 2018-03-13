@@ -8,7 +8,7 @@ const auth = require('./middlewares/auth');
 const config = require('./config');
 
 // En un futuro, lo refactorizaremos
-//mongoose.connect('mongodb://192.168.99.100:27017/trialquest',
+//mongoose.connect('mongodb://192.168.99.100:27017/trailquest',
 mongoose.connect(config.MONGODB_URI,
     { useMongoClient: true });
 mongoose.Promise = global.Promise;
@@ -16,7 +16,7 @@ mongoose.Promise = global.Promise;
 
 // Requerimos todos los routes
 const users = require('./routes/users');
-const trials = require('./routes/trials');
+const trails = require('./routes/trails');
 
 let app = express();
 
@@ -27,6 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use('/api/v1/auth', users);
-app.use('/api/v1/trials', auth.isAuth, trials);
+app.use('/api/v1/trails', auth.isAuth, trails);
+app.use('/api/v1/events', auth.isAuth, events);
 
 module.exports = app;

@@ -1,19 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let trialSchema = new Schema({
-    titulo: String,
-    descripcion: String,
-    ciudad: String,
-    pais: String,
-    imagen: String,
-
-    asistentes: Number,
-    dificultad:    { type: String, enum:
-            ['Fácil', 'Medio', 'Difícil', 'Desafiante']
-    },
-    favorito: Boolean
+let eventSchema = new Schema({
+    title: String,
+    description: String,
+    city: String,
+    country: String,
+    picture: String,
+    date: [{ type: Date, default: Date.now }],
+    following: Boolean,
+    attendants: {type: Schema.ObjectId, ref: 'User'}
 });
 
 module.exports =
-    mongoose.model('Trial', trialSchema);
+    mongoose.model('Event', eventSchema);
