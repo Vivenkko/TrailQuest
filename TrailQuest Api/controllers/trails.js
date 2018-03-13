@@ -193,7 +193,30 @@ module.exports.ranking = (req, res) => {
 
 
 // GET Listar favoritos
+module.exports.findFavorites = (req, res) => {
 
+    Trail.find({favorite: req.params.favorite}, (err, trails) => {
+        if (err)
+            return res
+                .status(500)
+                .jsonp({
+                    error: 500,
+                    mensaje: `${err.message}`
+                });
+
+        if (trails && trails.length && favorite === true) {
+            User.populate('trails', {path: "author", select: 'displayName'}, (err, trails) =>{
+                res
+                    .status(200)
+                    .jsonp(trails);
+            });
+        } else {
+            res.sendStatus(404);
+        }
+
+        return res.sendStatus(200).jsonp(trails);
+    });
+};
 
 
 // GET Listar por recorrido
