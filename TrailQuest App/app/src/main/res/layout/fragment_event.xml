@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:elevation="12dp"
+    app:cardElevation="12dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="horizontal"
+        android:fadingEdgeLength="10dp">
+
+        <ImageView
+            android:id="@+id/imageViewEventImage"
+            android:layout_height="200dp"
+            android:alpha="0.8"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/blackforest" />
+
+        <TextView
+            android:id="@+id/textViewEventTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Title"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageViewEventAttendants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewEventAttendants"
+            app:layout_constraintEnd_toStartOf="@+id/textViewEventAttendants"
+            app:layout_constraintTop_toTopOf="@+id/textViewEventAttendants"
+            app:srcCompat="@drawable/ic_people" />
+
+        <TextView
+            android:id="@+id/textViewEventAttendants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Num. ass"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageButton
+            android:id="@+id/imageButtonEventFollow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#232323"
+            android:tint="@color/colorAccent"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewEventTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textViewEventTitle"
+            app:srcCompat="@drawable/ic_followers" />
+
+        <TextView
+            android:id="@+id/textViewEventPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Place"
+            android:textColor="#232323"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textViewEventTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEventTitle" />
+
+        <TextView
+            android:id="@+id/textViewEventCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Country"
+            android:textColor="#232323"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textViewEventPlace"
+            app:layout_constraintStart_toEndOf="@+id/textViewEventPlace"
+            app:layout_constraintTop_toTopOf="@+id/textViewEventPlace" />
+
+        <TextView
+            android:id="@+id/textViewEventDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Description"
+            android:textColor="@color/common_google_signin_btn_text_dark_pressed"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/imageViewEventAttendants"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonEventFollow"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textViewEventTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textViewEventPlace"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Date"
+            android:textColor="#232323"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>
