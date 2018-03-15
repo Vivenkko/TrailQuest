@@ -54,7 +54,7 @@ module.exports.signIn = (req, res) => {
     });
 };
 
-// GET List
+// GET Listar todos los users
 module.exports.list = (req, res) =>  {
     User.findOne({_id: req.user}).exec((err, admin) => {
         if(admin.isAdmin){

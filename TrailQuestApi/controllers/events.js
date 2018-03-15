@@ -6,7 +6,7 @@ const Moment = require('moment');
 module.exports.addEvent = (req, res) => {
     User.findOne({_id: req.user}, (err, user) => {
         if (user === undefined || user === null) {
-            return res.sendStatus(404);
+            return res.status(404).jsonp({error: 404, mensaje: 'Event can not be null or undefined'});
         }
 
         if(user.isAdmin){
@@ -43,14 +43,14 @@ module.exports.findById = (req, res) => {
 
     Event.findById(req.params.id, (err, event) => {
         if (event === undefined || event === null) {
-            return res.sendStatus(404);
+            return res.status(404).jsonp({error: 404, mensaje: 'Event can not be null or undefined'});
         }
 
         if (err) {
             return res.status(404).jsonp({error: 404, mensaje: 'No existe ningún evento con ese ID'})
         }
 
-        return res.sendStatus(200).jsonp(event);
+        return res.status(200).jsonp(event);
     });
 
 };
@@ -61,7 +61,7 @@ module.exports.editEvent = (req, res) => {
 
     Event.findById(req.params.id, function (err, event) {
         if (event === undefined || event === null) {
-            return res.sendStatus(404);
+            return res.status(404).jsonp({error: 404, mensaje: 'Event can not be null or undefined'});
         }
 
         event.title = req.body.title;
@@ -71,15 +71,13 @@ module.exports.editEvent = (req, res) => {
         event.city = req.body.city;
         event.country = req.body.country;
         event.following = req.body.following;
-        event.date = req.body.date;
-        event.attendants = req.body.attendants;
+        event.date = Moment(req.body.date, "DD/MM/YYYY");
 
-        Event.save(req.params.id, (err, event) => {
+        event.save(function(err, event) {
             if (err) {
-                return res.status(404).jsonp({error: 404, mensaje: 'No existe ningún evento con ese ID'})
+                return res.status(500).jsonp({error: 500, mensaje: `${err.message}`});
             }
-
-            return res.sendStatus(200).jsonp(event);
+            return res.status(200).jsonp(event);
         });
     });
 
@@ -91,19 +89,75 @@ module.exports.deleteEvent = (req, res) => {
 
     Stop.findById(req.params.id, (err, event) => {
         if (event === undefined || event === null) {
-            return res.sendStatus(404);
+            return res.status(404).jsonp({error: 404, mensaje: 'Event can not be null or undefined'});
         }
 
         event.remove((err) => {
-            if (err)
-                return res
-                    .status(500)
-                    .jsonp({
-                        error: 500,
-                        mensaje: `${err.message}`
-                    });
-            res.sendStatus(204);
+            if (err) {
+                return res.status(500).jsonp({error: 500, mensaje: `${err.message}`});
+            }
+            res.status(204).jsonp({mensaje: 'Evento borrado correctamente'});
         });
+    });
+
+};
+
+
+// GET Listar eventos
+module.exports.listEvents = (req, res) =>  {
+
+    Event.find().exec((err, result) => {
+        if (err) {
+            return res.status(500).jsonp({error: 500, mensaje: err.message});
+        }
+
+        if (result && result.length) {
+            Event.populate(result, {path: "attendants", select: '-_id displayName'}, (err, listEvents) =>{
+                res.status(200).jsonp(listEvents);
+            });
+        } else {
+            return res.sendStatus(404);
+        }
+    });
+
+};
+
+
+// GET Listar eventos seguidos
+module.exports.listFollowing = (req, res) =>  {
+
+    Event.find({following: true}).exec((err, result) => {
+        if (err) {
+            return res.status(500).jsonp({error: 500, mensaje: err.message});
+        }
+
+        if (result && result.length) {
+            Event.populate(result, {path: "attendants", select: '-_id displayName'}, (err, listEvents) =>{
+                res.status(200).jsonp(listEvents);
+            });
+        } else {
+            return res.sendStatus(404);
+        }
+    });
+
+};
+
+
+// GET Listar eventos por ciudad
+module.exports.listByCity = (req, res) =>  {
+
+    Event.find({city: req.body.city}).exec((err, result) => {
+        if (err) {
+            return res.status(500).jsonp({error: 500, mensaje: err.message});
+        }
+
+        if (result && result.length) {
+            Event.populate(result, {path: "attendants", select: '-_id displayName'}, (err, listEvents) =>{
+                res.status(200).jsonp(listEvents);
+            });
+        } else {
+            return res.sendStatus(404);
+        }
     });
 
 };

@@ -3,9 +3,9 @@ const eventsController = require('../controllers/events');
 
 let router = express.Router();
 
-//router.get('/list', eventsController.findAllEvents);
-//router.get('/listByCity', eventsController.listByCity);
-//router.get('/following', eventsController.listMyEvents);
+router.get('/list', eventsController.listEvents);
+router.get('/following', eventsController.listFollowing);
+router.post('/listByCity/:city', eventsController.listByCity);
 
 router.post('/create', eventsController.addEvent);
 router.get('/read/:id', eventsController.findById);
