@@ -1,41 +1,48 @@
 const Trail = require('../models/trails');
 const User = require('../models/users');
+const Favorite = require('../models/favorites');
+const mongoose = require('mongoose');
 
-//GET Obtener todos los trails
-module.exports.findAllTrails = (req, res) => {
+// GET Listar trails
+module.exports.listTrails = (req, res) =>  {
 
-    Trail.find((err, trails) => {
+    Trail.find().exec((err, result) => {
         if (err) {
-            return res.status(500).jsonp({error: 500, mensaje: `${err.message}`});
+            return res.status(500).jsonp({error: 500, mensaje: err.message});
         }
 
-        if (trails && trails.length) {
-            User.populate('trails', {path: "author", select: 'displayName'}, (err, trails) =>{
-                res.status(200).jsonp(trails);
+        if (result && result.length) {
+            Trail.populate(result, {path: "author", select: '-_id displayName'}, (err, result) =>{
+                res.status(200).jsonp(result);
             });
         } else {
-            res.sendStatus(404);
+            return res.sendStatus(404);
         }
     });
+
 };
 
 
-// // GET Lista de mis trails
-// module.exports.listMyTrails = (req, res) => {
-//     User.findById({_id: req.user}, {trailList: true}, (err, trail) => {
-//         if (err) return res.status(404).jsonp({
-//             error: 404,
-//             mensaje: 'No existe ese usuario'
-//         });
-//
-//         User.populate(trail, {
-//             path: "trailList",
-//             select: '_id title description city country picture valuation favorite distance difficulty locations stops'
-//         },(err, user) => {
-//             res.status(200).jsonp(user)
-//         });
-//     });
-// };
+// GET Lista de mis trails
+module.exports.listMyTrails = (req, res) => {
+
+    Trail.find().exec((err, result) => {
+        if (err) {
+            return res.status(500).jsonp({error: 500, mensaje: err.message});
+        }
+
+        if (result && result.length) {
+            Trail.populate(result, {path: "author", select: '-_id displayName'}, (err, result) =>{
+                if (req.params.id === author.id) {
+                    return res.status(200).jsonp(result);
+                }
+            });
+        } else {
+            return res.sendStatus(404);
+        }
+    });
+
+};
 
 
 //POST Nuevo trail
@@ -52,13 +59,11 @@ module.exports.addTrail = (req, res) => {
            city: req.body.city,
            country: req.body.country,
            picture: req.body.picture,
-           valuation: req.body.valuation,
-           favorite: req.body.favorite,
+           rate: req.body.rate,
            distance: req.body.distance,
            author: mongoose.Types.ObjectId(user._id),
            difficulty: req.body.difficulty,
-           locations: req.body.locations,
-           stops: mongoose.Types.ObjectId(stop._id)
+           locations: req.body.locations
         });
 
         newTrail.save(function(err, trail) {
@@ -66,7 +71,7 @@ module.exports.addTrail = (req, res) => {
                 return res.status(500).jsonp({error: 500, mensaje: `${err.message}`});
             }
 
-            User.populate(trail, {path: "author", select: 'displayName'}, (err, trail) => {
+            Trail.populate(trail, {path: "author", select: 'displayName'}, (err, trail) => {
                 res.status(200).jsonp(trail)
             });
         })
@@ -99,25 +104,20 @@ module.exports.editTrail = (req, res) => {
 
         trail.title = req.body.title;
         trail.description = req.body.description;
-        trail.valuation = req.body.valuation;
-        trail.favorite = req.body.favorite;
-        trail.difficulty = req.body.difficulty;
+        trail.rate = req.body.rate;
         trail.city = req.body.city;
         trail.country = req.body.country;
         trail.picture = req.body.picture;
         trail.distance = req.body.distance;
         trail.difficulty = req.body.difficulty;
         trail.locations = req.body.locations;
-        trail.stops = req.body.stops;
 
         trail.save(function(err, trail) {
             if (err) {
                 return res.status(500).jsonp({error: 500, mensaje: `${err.message}`});
+            } else {
+                return res.status(200).jsonp(trail)
             }
-
-            User.populate(trail, {path: "autor", select: '_id displayName email avatar'}, (err, trail)=>{
-                res.status(200).jsonp(trail)
-            });
         })
     });
 };
@@ -145,19 +145,20 @@ module.exports.deleteTrail = (req, res) => {
 // GET Listar por valoración
 module.exports.ranking = (req, res) => {
 
-    Trail.find((err, trails) => {
+    Trail.find().exec((err, result) => {
         if (err) {
-            return res.status(500).jsonp({error: 500, mensaje: `${err.message}`});
+            return res.status(500).jsonp({error: 500, mensaje: err.message});
         }
 
-        if (trails && trails.length) {
-            User.populate(trails, {path: "author", select: 'displayName'}, (err, trails) => {
-                res.status(200).jsonp(trails);
+        if (result && result.length) {
+            Trail.populate(result, {path: "author", select: '-_id displayName'}, (err, result) =>{
+                res.status(200).jsonp(result);
             });
         } else {
-            res.sendStatus(404);
+            return res.sendStatus(404);
         }
     });
+
 };
 
 
@@ -169,7 +170,7 @@ module.exports.favorites = (req, res) => {
             return res.status(500).jsonp({error: 500, mensaje: `${err.message}`});
         }
 
-        if (trails && trails.length && favorite === true) {
+        if (trails && trails.length) {
             User.populate('trails', {path: "author", select: 'displayName'}, (err, trails) =>{
                 res.status(200).jsonp(trails);
             });
@@ -183,3 +184,21 @@ module.exports.favorites = (req, res) => {
 
 
 // GET Listar por dificultad
+module.exports.filterByDifficulty = (req, res) => {
+
+    Trail.find({favorite: req.params.favorite}, (err, trails) => {
+        if (err) {
+            return res.status(500).jsonp({error: 500, mensaje: `${err.message}`});
+        }
+
+        if (trails && trails.length) {
+            User.populate('trails', {path: "author", select: 'displayName'}, (err, trails) =>{
+                res.status(200).jsonp(trails);
+            });
+        } else {
+            res.sendStatus(404);
+        }
+
+        return res.sendStatus(200).jsonp(trails);
+    });
+};

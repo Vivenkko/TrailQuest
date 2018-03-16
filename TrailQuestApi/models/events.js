@@ -7,9 +7,7 @@ let eventSchema = new Schema({
     city: String,
     country: String,
     picture: String,
-    following: Boolean,
-    date: { type: Date, default: Date.now() },
-    attendants: [{ type: Schema.ObjectId, ref: 'User' }]
+    date: { type: Date, default: Date.now() }
 });
 
 module.exports =

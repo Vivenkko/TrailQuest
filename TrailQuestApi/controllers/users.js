@@ -54,7 +54,7 @@ module.exports.signIn = (req, res) => {
     });
 };
 
-// GET Listar todos los users
+// GET Listar todos los usuarios
 module.exports.list = (req, res) =>  {
     User.findOne({_id: req.user}).exec((err, admin) => {
         if(admin.isAdmin){
@@ -75,7 +75,7 @@ module.exports.list = (req, res) =>  {
     });
 };
 
-// GET Obtener un user
+// GET Obtener un usuario
 module.exports.findOneUser = (req, res) => {
 
     User.findById(req.params.id, (err, user) => {
@@ -107,15 +107,11 @@ module.exports.deleteUser = (req, res) => {
 
 };
 
-// PUT Editar un user
+// PUT Editar un usuario
 module.exports.editUser = (req, res) => {
 
     User.findById(req.params.id, function (err, user) {
-        if (user === undefined) {
-            return res.sendStatus(404);
-        }
-
-        if (user === null) {
+        if (user === undefined || user === null) {
             return res.sendStatus(404);
         }
 
@@ -133,3 +129,5 @@ module.exports.editUser = (req, res) => {
     });
 
 };
+
+
