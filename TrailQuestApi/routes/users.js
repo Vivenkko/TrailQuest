@@ -6,11 +6,11 @@ let router = express.Router();
 
 router.get('/list', auth.isAuth, userController.list);
 
-router.post('/login', userController.signIn);
+router.post('/login', userController.login);
 router.post('/register', userController.signUp);
 
-router.get('/read', auth.isAuth, userController.findOneUser);
-router.put('/update', auth.isAuth, userController.editUser);
-router.delete('/delete', auth.isAuth, userController.deleteUser);
+router.get('/read/:id', auth.isAuth, userController.findOneUser);
+router.put('/update/:id', auth.isAuth, userController.editUser);
+router.delete('/delete/:id', auth.isAuth, userController.deleteUser);
 
 module.exports = router;

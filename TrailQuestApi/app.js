@@ -6,6 +6,7 @@ const logger =  require('morgan'); // Para realizar el logging de la aplicación
 const mongoose = require('mongoose');
 const auth = require('./middlewares/auth');
 const config = require('./config');
+const uploadFile = require('express-fileupload');
 
 // En un futuro, lo refactorizaremos
 //mongoose.connect('mongodb://192.168.99.100:27017/trailquest',
@@ -23,6 +24,7 @@ let app = express();
 
 app.use(logger('dev')); // Para "inicializar" el logging
 
+app.use(uploadFile());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());

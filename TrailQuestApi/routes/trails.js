@@ -5,9 +5,11 @@ let router = express.Router();
 
 router.get('/list', trailsController.listTrails);
 router.get('/filterMine', trailsController.listMyTrails);
-router.get('/filterByDifficulty', trailsController.filterByDifficulty);
+router.post('/filterByDifficulty', trailsController.filterByDifficulty);
 router.get('/ranking', trailsController.ranking);
-router.get('/favorites', trailsController.favorites);
+router.get('/favorites', trailsController.listFavorites);
+router.post('/makeFav/:id', trailsController.makeFavorite);
+router.delete('/removeFav/:id', trailsController.removeFavorite);
 
 router.post('/create', trailsController.addTrail);
 router.get('/read/:id', trailsController.findById);

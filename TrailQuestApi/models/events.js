@@ -5,6 +5,7 @@ let eventSchema = new Schema({
     title: String,
     description: String,
     city: String,
+    location: String,
     country: String,
     picture: String,
     date: { type: Date, default: Date.now() }

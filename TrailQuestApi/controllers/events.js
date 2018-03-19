@@ -3,8 +3,28 @@ const User = require('../models/users');
 const Following = require('../models/following');
 const Moment = require('moment');
 const mongoose = require('mongoose');
+const imgur = require('imgur');
 
-function addEvent (req, res, img) {
+// POST Crear evento
+module.exports.addEvent = (req, res) => {
+
+    if (req.files) {
+        let fichero = req.files.photo;
+        let imgB64 = fichero.data.toString('base64');
+
+        imgur.setClientId('8a985ad7fa520e8');
+
+        imgur.uploadBase64(imgB64).then(function (json) {
+            eventPhoto(req, res, json.data.link);
+        }).catch(function (err) {
+            eventPhoto(req, res, null);
+        })
+    }
+
+};
+
+function eventPhoto(req, res, img) {
+
     let newEvent = new Event({
         title: req.body.title,
         description: req.body.description,
@@ -15,8 +35,6 @@ function addEvent (req, res, img) {
         date: Moment(req.body.date, "DD/MM/YYYY")
     });
 
-    newEvent.attendants.push(user._id);
-
     newEvent.save(function (err, event) {
         if (err) {
             return res.status(500).jsonp({error: 500, mensaje: `${err.message}`});
@@ -24,23 +42,9 @@ function addEvent (req, res, img) {
             return res.status(200).jsonp(event);
         }
     });
+
 }
 
-// POST Crear evento
-module.exports.addEvent = (req, res) => {
-    User.findOne({_id: req.user}, (err, user) => {
-        if (user === undefined || user === null) {
-            return res.status(404).jsonp({error: 404, mensaje: 'Event can not be null or undefined'});
-        }
-
-        if(user.isAdmin){
-            addEvent()
-        } else {
-            return res.status(403).jsonp({error: 403, mensaje: "No tiene autorización para acceder"});
-        }
-    });
-
-};
 
 // GET Buscar un evento por id
 module.exports.findById = (req, res) => {
@@ -63,6 +67,23 @@ module.exports.findById = (req, res) => {
 // PUT Editar un evento
 module.exports.editEvent = (req, res) => {
 
+    if (req.files) {
+        let fichero = req.files.photo;
+        let imgB64 = fichero.data.toString('base64');
+
+        imgur.setClientId('8a985ad7fa520e8');
+
+        imgur.uploadBase64(imgB64).then(function (json) {
+            eventPhoto(req, res, json.data.link);
+        }).catch(function (err) {
+            eventPhoto(req, res, null);
+        })
+    }
+
+};
+
+function updateEvent(req, res, img) {
+
     Event.findById(req.params.id, function (err, event) {
         if (event === undefined || event === null) {
             return res.status(404).jsonp({error: 404, mensaje: 'Event can not be null or undefined'});
@@ -70,7 +91,7 @@ module.exports.editEvent = (req, res) => {
 
         event.title = req.body.title;
         event.description = req.body.description;
-        event.picture = req.body.picture;
+        event.picture = img;
         event.location = req.body.location;
         event.city = req.body.city;
         event.country = req.body.country;
@@ -84,7 +105,7 @@ module.exports.editEvent = (req, res) => {
         });
     });
 
-};
+}
 
 
 // DELETE Eliminar un evento
@@ -147,11 +168,11 @@ module.exports.follow = (req, res) => {
 
     User.findOne({_id: req.user}).exec((err, user) => {
         if (user === undefined || user === null) {
-            return res.status(404).jsonp({error: 404, mensaje: 'Event can not be null or undefined'});
+            return res.status(404).jsonp({error: 404, mensaje: 'User can not be null or undefined'});
         }
 
         if (err) {
-            return res.status(404).jsonp({error: 404, mensaje: 'No existe ningún evento con ese ID'})
+            return res.status(404).jsonp({error: 404, mensaje: 'No existe ningún usuario con ese ID'})
         }
 
         Event.findById(req.params.id, (err, event) => {
@@ -177,10 +198,11 @@ module.exports.follow = (req, res) => {
             });
         });
     });
+
 };
 
 
-// POST Dejar de seguir un evento
+// DELETE Dejar de seguir un evento
 module.exports.unfollow = (req, res) => {
 
     Following.findById(req.params.id, (err, following) => {
