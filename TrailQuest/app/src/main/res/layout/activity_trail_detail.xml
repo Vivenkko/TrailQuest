@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="vivenkko.trailquest.TrailDetailActivity">
+
+    <ImageView
+        android:id="@+id/imageViewTrailDetailHeader"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/navbg" />
+
+    <TextView
+        android:id="@+id/textViewTrailDetailDifficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/difficulty_style"
+        android:backgroundTint="@color/colorPrimary"
+        android:paddingBottom="3dp"
+        android:paddingEnd="6dp"
+        android:paddingStart="6dp"
+        android:paddingTop="3dp"
+        android:text="Difficulty"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewTrailDetailTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Trail Title"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ratingBarTrailDetail"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RatingBar
+        android:id="@+id/ratingBarTrailDetail"
+        style="@style/Widget.AppCompat.RatingBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:clickable="false"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="5"
+        app:layout_constraintBottom_toTopOf="@+id/textViewTrailDetailCountry"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTrailDetailTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewTrailDetailTitle" />
+
+    <TextView
+        android:id="@+id/textViewTrailDetailCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City"
+        android:textColor="@color/cardview_light_background"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTrailDetailTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textViewTrailDetailTitle"
+        app:layout_constraintTop_toBottomOf="@+id/ratingBarTrailDetail" />
+
+    <TextView
+        android:id="@+id/textViewTrailDetailCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="8dp"
+        android:text="Country"
+        android:textColor="@color/cardview_light_background"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewTrailDetailHeader"
+        app:layout_constraintEnd_toEndOf="@+id/textViewTrailDetailTitle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textViewTrailDetailCity"
+        app:layout_constraintTop_toTopOf="@+id/textViewTrailDetailCity" />
+
+    <ToggleButton
+        android:id="@+id/toggleButtonTrailLike"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/ic_like"
+        android:checked="false"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewTrailDetailHeader"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewTrailDetailHeader" />
+
+    <TextView
+        android:id="@+id/textViewTrailDetailDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:maxLines="5"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewTrailDetailHeader"
+        tools:text="Descripcion" />
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTrailDetailDescription" />
+
+    <ImageView
+        android:id="@+id/imageViewTrailDetailRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/separator"
+        app:layout_constraintTop_toBottomOf="@+id/separator"
+        app:srcCompat="@drawable/ic_route" />
+
+    <TextView
+        android:id="@+id/textViewTrailDetailDistance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Distance"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewTrailDetailRoute"
+        app:layout_constraintStart_toEndOf="@+id/imageViewTrailDetailRoute"
+        app:layout_constraintTop_toTopOf="@+id/imageViewTrailDetailRoute" />
+
+    <ImageView
+        android:id="@+id/imageViewTrailDetailAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewTrailDetailRoute"
+        app:layout_constraintStart_toEndOf="@+id/textViewTrailDetailDistance"
+        app:layout_constraintTop_toTopOf="@+id/imageViewTrailDetailRoute"
+        app:srcCompat="@drawable/ic_author" />
+
+    <TextView
+        android:id="@+id/textViewTrailDetailAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Author"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewTrailDetailAuthor"
+        app:layout_constraintStart_toEndOf="@+id/imageViewTrailDetailAuthor"
+        app:layout_constraintTop_toTopOf="@+id/imageViewTrailDetailAuthor" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapViewTrailDetail"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewTrailDetailRoute" />
+
+</android.support.constraint.ConstraintLayout>

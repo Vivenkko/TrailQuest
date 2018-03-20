@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_author"
+            android:iconTint="#000000"
+            android:title="My account" />
+        <item
+            android:id="@+id/nav_trails"
+            android:icon="@drawable/ic_map"
+            android:iconTint="#000000"
+            android:title="My Trails" />
+        <item
+            android:id="@+id/nav_events"
+            android:icon="@drawable/ic_event_black_24dp"
+            android:iconTint="#000000"
+            android:title="Followed Events" />
+        <item
+            android:id="@+id/nav_ranking"
+            android:icon="@drawable/ic_ranking"
+            android:title="Trails Ranking" />
+    </group>
+
+
+</menu>
