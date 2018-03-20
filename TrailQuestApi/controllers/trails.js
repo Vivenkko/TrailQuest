@@ -179,7 +179,7 @@ module.exports.deleteTrail = (req, res) => {
 };
 
 
-// GET Listar por valoración
+// POST Listar por valoración
 module.exports.ranking = (req, res) => {
 
     Trail.find().exec((err, result) => {

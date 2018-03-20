@@ -15,8 +15,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import vivenkko.trailquest.models.User;
-import vivenkko.trailquest.retrofit.ApiController;
-import vivenkko.trailquest.retrofit.ServiceGenerator;
+import vivenkko.trailquest.retrofit.TrailQuestController;
+import vivenkko.trailquest.retrofit.TrailQuestServiceGenerator;
 
 public class LoginActivity extends AppCompatActivity {
     Button btn;
@@ -29,35 +29,48 @@ public class LoginActivity extends AppCompatActivity {
         btn = findViewById(R.id.buttonLogin);
         email = findViewById(R.id.editTextLoginEmail);
         password = findViewById(R.id.editTextLoginPassword);
-    }
 
-    public void loggin(View view) {
-        ApiController api = ServiceGenerator.createService(ApiController.class);
-
-        Call<User> call = api.logging(email.getText().toString(), password.getText().toString());
-
-        call.enqueue(new Callback<User>() {
+        btn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onResponse(Call<User> call, Response<User> response) {
-                if (response.isSuccessful()) {
-                    User respuesta = response.body();
-                    Toast.makeText(LoginActivity.this, "Login correcto", Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+                User user = new User();
 
-                    Bundle bundle = new Bundle();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                    bundle.putString("key", respuesta.getKey());
-                    intent.putExtras(bundle);
-                    startActivity(intent);
-                }else {
-                    Toast.makeText(LoginActivity.this, "Usuario incorrecto", Toast.LENGTH_SHORT).show();
-                }
-            }
+                user.setEmail(email.getText().toString());
+                user.setPassword(password.getText().toString());
 
-            @Override
-            public void onFailure(Call<User> call, Throwable t) {
+                TrailQuestController api = TrailQuestServiceGenerator.createService(TrailQuestController.class);
 
+                Call<User> call = api.login(user);
+
+                call.enqueue(new Callback<User>() {
+                    @Override
+                    public void onResponse(Call<User> call, Response<User> response) {
+                        if (response.isSuccessful()) {
+                            User respuesta = response.body();
+                            Toast.makeText(LoginActivity.this, "Login correcto", Toast.LENGTH_SHORT).show();
+
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                            i.putExtra("email", response.body().getEmail());
+                            i.putExtra("displayName", response.body().getDisplayName());
+                            i.putExtra("password", response.body().getPassword());
+                            i.putExtra("avatar", response.body().getAvatar());
+                            i.putExtra("token", response.body().getToken());
+                            startActivity(i);
+                            finish();
+                        }else {
+                            Toast.makeText(LoginActivity.this, "Usuario incorrecto", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<User> call, Throwable t) {
+
+                    }
+                });
             }
         });
+
     }
 
     public void recuperarPass(View view) {
@@ -65,20 +78,20 @@ public class LoginActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         // 2. Chain together various setter methods to set the dialog characteristics
-        builder.setMessage(R.string.dialog_compartir_mensaje)
-                .setTitle(R.string.dialog_compartir_titulo);
+        builder.setMessage(R.string.dialog_message_recover)
+                .setTitle(R.string.dialog_title_recover);
 
         LayoutInflater inflater = getLayoutInflater();
-        View dialogView = inflater.inflate(R.layout.recordar_password, null);
+        View dialogView = inflater.inflate(R.layout.forgot_password, null);
         builder.setView(dialogView);
 
 
         // Añadir botones
-        builder.setPositiveButton(R.string.dialog_compartir_ok, new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.button_accept, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
             }
         });
-        builder.setNegativeButton(R.string.dialog_compartir_cancel, new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.button_cancel, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // Cerramos el cuadro de diálogo
                 dialog.dismiss();
@@ -92,8 +105,8 @@ public class LoginActivity extends AppCompatActivity {
         dialog.show();
     }
 
-
     public void registrar(View view) {
-        startActivity(new Intent(this, RegisterActivity.class));
+        startActivity(new Intent(this, SignUpActivity.class));
     }
+
 }

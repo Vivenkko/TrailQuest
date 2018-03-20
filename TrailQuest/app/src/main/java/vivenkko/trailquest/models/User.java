@@ -28,16 +28,21 @@ public class User {
     @Expose
     private Boolean isAdmin;
 
+    @SerializedName("token")
+    @Expose
+    private String token;
+
     public User() {
 
     }
 
-    public User(String displayName, String email, String avatar, String password, Boolean isAdmin) {
+    public User(String displayName, String email, String avatar, String password, Boolean isAdmin, String token) {
         this.displayName = displayName;
         this.email = email;
         this.avatar = avatar;
         this.password = password;
         this.isAdmin = isAdmin;
+        this.token = token;
     }
 
     public String getDisplayName() {
@@ -80,6 +85,14 @@ public class User {
         isAdmin = admin;
     }
 
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -93,7 +106,8 @@ public class User {
         if (avatar != null ? !avatar.equals(user.avatar) : user.avatar != null) return false;
         if (password != null ? !password.equals(user.password) : user.password != null)
             return false;
-        return isAdmin != null ? isAdmin.equals(user.isAdmin) : user.isAdmin == null;
+        if (isAdmin != null ? !isAdmin.equals(user.isAdmin) : user.isAdmin != null) return false;
+        return token != null ? token.equals(user.token) : user.token == null;
     }
 
     @Override
@@ -103,6 +117,7 @@ public class User {
         result = 31 * result + (avatar != null ? avatar.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (isAdmin != null ? isAdmin.hashCode() : 0);
+        result = 31 * result + (token != null ? token.hashCode() : 0);
         return result;
     }
 
@@ -114,7 +129,7 @@ public class User {
                 ", avatar='" + avatar + '\'' +
                 ", password='" + password + '\'' +
                 ", isAdmin=" + isAdmin +
+                ", token='" + token + '\'' +
                 '}';
     }
-
 }

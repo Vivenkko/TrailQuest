@@ -6,9 +6,11 @@
 
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="button_cancel">Cancel</string>
+    <string name="button_accept">Accept</string>
+    <string name="dialog_title_recover">Recuperar contraseña</string>
+    <string name="dialog_message_recover">Indique su email para obtener su contraseña</string>
+    <string name="error_register_empty">Este campo no puede estar vacío</string>
 
 </resources>
