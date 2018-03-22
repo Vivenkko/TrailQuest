@@ -58,7 +58,7 @@ function userSignUp(req,res,img) {
 // POST Login
 module.exports.login = (req, res) => {
 
-    User.findOne({email: req.body.email}).select('_id email +password avatar').exec((err, user) => {
+    User.findOne({email: req.body.email}).select('_id email +password avatar displayName').exec((err, user) => {
 
         if (err) {
             return res.status(401).jsonp({error: 401, mensaje: 'Error en la autenticación'});
@@ -75,7 +75,9 @@ module.exports.login = (req, res) => {
                 return res.status(401).jsonp({error: 401, mensaje: 'Error en la autenticación'});
             } else {
                 req.user = user;
-                res.status(200).jsonp({mensaje: 'Login correcto', token: service.createToken(user)});
+                res.status(200).jsonp({mensaje: 'Login correcto', token: service.createToken(user),
+                    displayName: user.displayName, email: user.email,
+                    isAdmin: user.isAdmin, avatar: user.avatar});
             }
         });
     });

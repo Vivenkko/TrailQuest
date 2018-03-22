@@ -2,21 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bbad8e0-5189-412c-859c-49a608119733" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../TrailQuest/.idea/modules.xml" afterPath="$PROJECT_DIR$/../TrailQuest/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/fragments/AccountFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/fragments/EventDetailFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/fragments/OnListFragmentInteractionListener.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/fragments/TrailDetailFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/fragments/TrailFragment.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/drawable/ic_calendar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/drawable/ic_home.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/fragment_account.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/fragment_event_detail.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/fragment_trail_detail.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/menu/home_option.xml" />
       <change beforePath="$PROJECT_DIR$/../TrailQuest/app/build.gradle" afterPath="$PROJECT_DIR$/../TrailQuest/app/build.gradle" />
       <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/EventFragment.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/EventFragment.java" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/AccountActivity.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/ActivityEventDetail.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/ActivityTrailDetail.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/EventFragment.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/fragments/EventFragment.java" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/FollowedEventsActivity.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/LoginActivity.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/LoginActivity.java" />
       <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/MainActivity.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/MyEventRecyclerViewAdapter.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/MyEventRecyclerViewAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/MyTrailRecyclerViewAdapter.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/MyTrailRecyclerViewAdapter.java" />
-      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/SignUpActivity.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/SignUpActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/TrailDetailActivity.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/TrailDetailActivity.java" />
-      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/TrailFragment.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/TrailFragment.java" />
-      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/models/Event.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/models/Event.java" />
-      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/retrofit/TrailQuestController.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/retrofit/TrailQuestController.java" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/MyTrailRecyclerViewAdapter.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/MyTrailsActivity.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/TrailFragment.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/models/Trail.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/models/Trail.java" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/models/User.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/models/User.java" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/retrofit/TrailQuestServiceGenerator.java" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/java/vivenkko/trailquest/retrofit/TrailQuestServiceGenerator.java" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/drawable/ic_menu_camera.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/drawable/ic_menu_gallery.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/drawable/ic_menu_manage.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/drawable/ic_menu_send.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/drawable/ic_menu_share.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/drawable/ic_menu_slideshow.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/activity_account.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/activity_event_detail.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/activity_followed_events.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/activity_my_trails.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/activity_trail_detail.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/content_main.xml" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/content_main.xml" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/fragment_event_list.xml" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/fragment_event_list.xml" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/fragment_trail.xml" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/fragment_trail.xml" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/fragment_trail_list.xml" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/fragment_trail_list.xml" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/nav_header_main.xml" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/layout/nav_header_main.xml" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/menu/activity_main2_drawer.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/menu/activity_main_drawer.xml" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/menu/activity_main_drawer.xml" />
+      <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/menu/main2.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../TrailQuest/app/src/main/res/values/strings.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/controllers/trails.js" afterPath="$PROJECT_DIR$/controllers/trails.js" />
+      <change beforePath="$PROJECT_DIR$/controllers/users.js" afterPath="$PROJECT_DIR$/controllers/users.js" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
@@ -32,41 +66,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="events.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="events.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/events.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-399">
+            <state relative-caret-position="2091">
               <caret line="123" column="11" lean-forward="false" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trails.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="trails.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/trails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3801">
-              <caret line="181" column="7" lean-forward="false" selection-start-line="181" selection-start-column="7" selection-end-line="181" selection-end-column="7" />
+            <state relative-caret-position="-2737">
+              <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/users.js">
+      <file leaf-file-name="trails.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/trails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2856">
-              <caret line="136" column="21" lean-forward="false" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+            <state relative-caret-position="102">
+              <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/users.js">
+      <file leaf-file-name="trails.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/trails.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state relative-caret-position="221">
+              <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -107,14 +141,14 @@
         <option value="$PROJECT_DIR$/models/following.js" />
         <option value="$PROJECT_DIR$/models/favorites.js" />
         <option value="$PROJECT_DIR$/routes/events.js" />
-        <option value="$PROJECT_DIR$/routes/trails.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/controllers/events.js" />
         <option value="$PROJECT_DIR$/models/events.js" />
-        <option value="$PROJECT_DIR$/controllers/users.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
-        <option value="$PROJECT_DIR$/controllers/trails.js" />
         <option value="$PROJECT_DIR$/models/users.js" />
+        <option value="$PROJECT_DIR$/controllers/users.js" />
+        <option value="$PROJECT_DIR$/routes/trails.js" />
+        <option value="$PROJECT_DIR$/controllers/trails.js" />
       </list>
     </option>
   </component>
@@ -127,11 +161,11 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1048" />
+    <option name="width" value="1386" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -151,6 +185,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -177,8 +213,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
@@ -301,11 +335,19 @@
       <workItem from="1521657746428" duration="632000" />
       <workItem from="1521664018028" duration="923000" />
       <workItem from="1521668512739" duration="10000" />
+      <workItem from="1521708643325" duration="468000" />
+      <workItem from="1521709926979" duration="763000" />
+      <workItem from="1521712751269" duration="145000" />
+      <workItem from="1521736305432" duration="681000" />
+      <workItem from="1521737471613" duration="667000" />
+      <workItem from="1521740560155" duration="785000" />
+      <workItem from="1521744248602" duration="432000" />
+      <workItem from="1521745037523" duration="445000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73614000" />
+    <option name="totallyTimeSpent" value="78000000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -317,16 +359,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
+    <frame x="-8" y="-8" width="1320" height="784" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14701216" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15444618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="NativeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839224" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3271605" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39969134" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -336,7 +379,6 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="NativeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287037" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -579,13 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/trails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/events.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -635,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/trails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/events.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -649,25 +677,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/trails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3801">
-          <caret line="181" column="7" lean-forward="false" selection-start-line="181" selection-start-column="7" selection-end-line="181" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="272">
+          <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/events.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-399">
+        <state relative-caret-position="2091">
           <caret line="123" column="11" lean-forward="false" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
           <folding />
         </state>
@@ -675,8 +694,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2856">
-          <caret line="136" column="21" lean-forward="false" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
+        <state relative-caret-position="1020">
+          <caret line="60" column="88" lean-forward="false" selection-start-line="60" selection-start-column="88" selection-end-line="60" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/trails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="10" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/trails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/trails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2737">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>

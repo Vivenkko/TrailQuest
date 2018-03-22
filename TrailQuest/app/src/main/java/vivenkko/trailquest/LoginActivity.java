@@ -1,5 +1,6 @@
 package vivenkko.trailquest;
 
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,21 +43,30 @@ public class LoginActivity extends AppCompatActivity {
 
                 Call<User> call = api.login(user);
 
+                final ProgressDialog progressDialog;
+                progressDialog = new ProgressDialog(LoginActivity.this);
+                progressDialog.setMax(100);
+                progressDialog.setMessage("Cargando...");
+                progressDialog.setTitle("Login");
+                progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                // show it
+                progressDialog.show();
+
                 call.enqueue(new Callback<User>() {
                     @Override
                     public void onResponse(Call<User> call, Response<User> response) {
+                        progressDialog.dismiss();
                         if (response.isSuccessful()) {
-                            User respuesta = response.body();
+                            //User respuesta = response.body();
                             Toast.makeText(LoginActivity.this, "Login correcto", Toast.LENGTH_SHORT).show();
 
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                            i.putExtra("email", response.body().getEmail());
-                            i.putExtra("displayName", response.body().getDisplayName());
-                            i.putExtra("password", response.body().getPassword());
-                            i.putExtra("avatar", response.body().getAvatar());
-                            i.putExtra("token", response.body().getToken());
-                            startActivity(i);
+                            intent.putExtra("email", response.body().getEmail());
+                            intent.putExtra("displayName", response.body().getDisplayName());
+                            intent.putExtra("password", response.body().getPassword());
+                            intent.putExtra("avatar", response.body().getAvatar());
+                            intent.putExtra("token", response.body().getToken());
+                            startActivity(intent);
                             finish();
                         }else {
                             Toast.makeText(LoginActivity.this, "Usuario incorrecto", Toast.LENGTH_SHORT).show();

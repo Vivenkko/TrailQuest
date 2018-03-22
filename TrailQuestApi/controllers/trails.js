@@ -27,16 +27,14 @@ module.exports.listTrails = (req, res) =>  {
 // GET Lista de mis trails
 module.exports.listMyTrails = (req, res) => {
 
-    Trail.find().exec((err, result) => {
+    Trail.find({author: req.body.user}).exec((err, result) => {
         if (err) {
             return res.status(500).jsonp({error: 500, mensaje: err.message});
         }
 
         if (result && result.length) {
             Trail.populate(result, {path: "author", select: '-_id displayName'}, (err, result) =>{
-                if (req.params.id === author.id) {
-                    return res.status(200).jsonp(result);
-                }
+                return res.status(200).jsonp(result);
             });
         } else {
             return res.sendStatus(404);

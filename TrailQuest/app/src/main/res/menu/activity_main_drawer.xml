@@ -4,26 +4,55 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_account"
-            android:icon="@drawable/ic_author"
-            android:iconTint="#000000"
-            android:title="My account" />
-        <item
-            android:id="@+id/nav_trails"
-            android:icon="@drawable/ic_map"
-            android:iconTint="#000000"
-            android:title="My Trails" />
-        <item
-            android:id="@+id/nav_events"
-            android:icon="@drawable/ic_event_black_24dp"
-            android:iconTint="#000000"
-            android:title="Followed Events" />
-        <item
-            android:id="@+id/nav_ranking"
-            android:icon="@drawable/ic_ranking"
-            android:title="Trails Ranking" />
+        <item android:title="Trails">
+            <menu>
+                <item
+                    android:id="@+id/nav_trails"
+                    android:icon="@drawable/ic_home"
+                    android:iconTint="@color/colorAccent"
+                    android:title="Home" />
+                <item
+                    android:id="@+id/nav_my_trails"
+                    android:icon="@drawable/ic_map"
+                    android:iconTint="@color/colorAccent"
+                    android:title="My Trails" />
+                <item
+                    android:id="@+id/nav_favorites"
+                    android:icon="@drawable/ic_heart"
+                    android:iconTint="@color/colorAccent"
+                    android:title="Favorites" />
+                <item
+                    android:id="@+id/nav_ranking"
+                    android:icon="@drawable/ic_ranking"
+                    android:iconTint="@color/colorAccent"
+                    android:title="Ranking" />
+            </menu>
+        </item>
     </group>
 
+    <item android:title="Events">
+        <menu>
+            <item
+                android:id="@+id/nav_events"
+                android:icon="@drawable/ic_calendar"
+                android:iconTint="@color/colorAccent"
+                android:title="Events" />
+            <item
+                android:id="@+id/nav_following"
+                android:icon="@drawable/ic_followers"
+                android:iconTint="@color/colorAccent"
+                android:title="Following" />
+        </menu>
+    </item>
+
+    <item android:title="User">
+        <menu>
+            <item
+                android:id="@+id/nav_account"
+                android:icon="@drawable/ic_author"
+                android:iconTint="@color/colorAccent"
+                android:title="Account" />
+        </menu>
+    </item>
 
 </menu>

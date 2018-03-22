@@ -30,7 +30,6 @@
 
         <!-- Activity main -->
 
-        <activity android:name=".ActivityEventDetail" />
         <activity
             android:name=".SignUpActivity"
             android:label="@string/app_name"
@@ -39,9 +38,6 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AccountActivity" />
-        <activity android:name=".MyTrailsActivity" />
-        <activity android:name=".FollowedEventsActivity"></activity>
     </application>
 
 </manifest>

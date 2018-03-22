@@ -3,10 +3,13 @@ package vivenkko.trailquest.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
 /**
  * Created by magomez on 20/03/2018.
  */
 
+@Parcel
 public class User {
     @SerializedName("displayName")
     @Expose

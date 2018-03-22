@@ -10,61 +10,49 @@ import java.util.List;
  */
 
 public class Trail {
-    @SerializedName("title_trail")
+    @SerializedName("_id")
+    @Expose
+    private String id;
+    @SerializedName("title")
     @Expose
     private String title;
-
-    @SerializedName("description_trail")
+    @SerializedName("description")
     @Expose
     private String description;
-
-    @SerializedName("city_trail")
+    @SerializedName("city")
     @Expose
     private String city;
-
-    @SerializedName("country_trail")
+    @SerializedName("country")
     @Expose
     private String country;
-
-    @SerializedName("rate_trail")
-    @Expose
-    private Double rate;
-
-    @SerializedName("picture_trail")
+    @SerializedName("picture")
     @Expose
     private String picture;
-
-    @SerializedName("distance_trail")
+    @SerializedName("rate")
+    @Expose
+    private Double rate;
+    @SerializedName("distance")
     @Expose
     private Double distance;
-
-    @SerializedName("difficulty_trail")
-    @Expose
-    private String difficulty;
-
-    @SerializedName("locations_trail")
-    @Expose
-    private List<String> locations;
-
-    @SerializedName("author_trail")
+    @SerializedName("author")
     @Expose
     private User author;
+    @SerializedName("difficulty")
+    @Expose
+    private String difficulty;
+    @SerializedName("__v")
+    @Expose
+    private Integer v;
+    @SerializedName("locations")
+    @Expose
+    private List<String> locations = null;
 
-    public Trail() {
-
+    public String getId() {
+        return id;
     }
 
-    public Trail(String title, String description, String city, String country, Double rate, String picture, Double distance, String difficulty, List<String> locations, User author) {
-        this.title = title;
-        this.description = description;
-        this.city = city;
-        this.country = country;
-        this.rate = rate;
-        this.picture = picture;
-        this.distance = distance;
-        this.difficulty = difficulty;
-        this.locations = locations;
-        this.author = author;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -99,20 +87,20 @@ public class Trail {
         this.country = country;
     }
 
-    public Double getRate() {
-        return rate;
-    }
-
-    public void setRate(Double rate) {
-        this.rate = rate;
-    }
-
     public String getPicture() {
         return picture;
     }
 
     public void setPicture(String picture) {
         this.picture = picture;
+    }
+
+    public Double getRate() {
+        return rate;
+    }
+
+    public void setRate(Double rate) {
+        this.rate = rate;
     }
 
     public Double getDistance() {
@@ -123,12 +111,28 @@ public class Trail {
         this.distance = distance;
     }
 
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
     public String getDifficulty() {
         return difficulty;
     }
 
     public void setDifficulty(String difficulty) {
         this.difficulty = difficulty;
+    }
+
+    public Integer getV() {
+        return v;
+    }
+
+    public void setV(Integer v) {
+        this.v = v;
     }
 
     public List<String> getLocations() {
@@ -139,12 +143,22 @@ public class Trail {
         this.locations = locations;
     }
 
-    public User getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(User author) {
-        this.author = author;
+    @Override
+    public String toString() {
+        return "Trail{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                ", picture='" + picture + '\'' +
+                ", rate=" + rate +
+                ", distance=" + distance +
+                ", author=" + author +
+                ", difficulty='" + difficulty + '\'' +
+                ", v=" + v +
+                ", locations=" + locations +
+                '}';
     }
 
     @Override
@@ -154,51 +168,38 @@ public class Trail {
 
         Trail trail = (Trail) o;
 
+        if (id != null ? !id.equals(trail.id) : trail.id != null) return false;
         if (title != null ? !title.equals(trail.title) : trail.title != null) return false;
         if (description != null ? !description.equals(trail.description) : trail.description != null)
             return false;
         if (city != null ? !city.equals(trail.city) : trail.city != null) return false;
         if (country != null ? !country.equals(trail.country) : trail.country != null) return false;
-        if (rate != null ? !rate.equals(trail.rate) : trail.rate != null) return false;
         if (picture != null ? !picture.equals(trail.picture) : trail.picture != null) return false;
+        if (rate != null ? !rate.equals(trail.rate) : trail.rate != null) return false;
         if (distance != null ? !distance.equals(trail.distance) : trail.distance != null)
             return false;
+        if (author != null ? !author.equals(trail.author) : trail.author != null) return false;
         if (difficulty != null ? !difficulty.equals(trail.difficulty) : trail.difficulty != null)
             return false;
-        if (locations != null ? !locations.equals(trail.locations) : trail.locations != null)
-            return false;
-        return author != null ? author.equals(trail.author) : trail.author == null;
+        if (v != null ? !v.equals(trail.v) : trail.v != null) return false;
+        return locations != null ? locations.equals(trail.locations) : trail.locations == null;
     }
 
     @Override
     public int hashCode() {
-        int result = title != null ? title.hashCode() : 0;
+        int result = id != null ? id.hashCode() : 0;
+        result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (description != null ? description.hashCode() : 0);
         result = 31 * result + (city != null ? city.hashCode() : 0);
         result = 31 * result + (country != null ? country.hashCode() : 0);
-        result = 31 * result + (rate != null ? rate.hashCode() : 0);
         result = 31 * result + (picture != null ? picture.hashCode() : 0);
+        result = 31 * result + (rate != null ? rate.hashCode() : 0);
         result = 31 * result + (distance != null ? distance.hashCode() : 0);
-        result = 31 * result + (difficulty != null ? difficulty.hashCode() : 0);
-        result = 31 * result + (locations != null ? locations.hashCode() : 0);
         result = 31 * result + (author != null ? author.hashCode() : 0);
+        result = 31 * result + (difficulty != null ? difficulty.hashCode() : 0);
+        result = 31 * result + (v != null ? v.hashCode() : 0);
+        result = 31 * result + (locations != null ? locations.hashCode() : 0);
         return result;
     }
-
-    @Override
-    public String toString() {
-        return "Trail{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", city='" + city + '\'' +
-                ", country='" + country + '\'' +
-                ", rate=" + rate +
-                ", picture='" + picture + '\'' +
-                ", distance=" + distance +
-                ", difficulty='" + difficulty + '\'' +
-                ", locations=" + locations +
-                ", author=" + author +
-                '}';
-    }
-
 }
+

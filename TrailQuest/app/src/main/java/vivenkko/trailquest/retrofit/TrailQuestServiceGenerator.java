@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TrailQuestServiceGenerator {
 
-    private static final String BASE_URL = "https://trailquestapi-vgimfrzske.now.sh/";
+    private static final String BASE_URL = "https://trailquestapi-licsfkxvsd.now.sh/";
 
     private static Retrofit.Builder builder =
             new Retrofit.Builder()

@@ -1,0 +1,131 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context="vivenkko.trailquest.MainActivity">
+
+<ImageView
+    android:id="@+id/imageViewEventDetailHeader"
+    android:layout_width="0dp"
+    android:layout_height="200dp"
+    android:scaleType="centerCrop"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/navbg" />
+
+<ImageButton
+    android:id="@+id/imageButtonEventDetailFollow"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="10dp"
+    android:backgroundTint="#232323"
+    android:tint="@color/colorAccent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/ic_followers" />
+
+<TextView
+    android:id="@+id/textViewEventDetailTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:text="Event Title"
+    android:textColor="@android:color/background_light"
+    android:textSize="24sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<TextView
+    android:id="@+id/textViewEventDetailCity"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:text="City"
+    android:textColor="@color/cardview_light_background"
+    android:textStyle="bold"
+    app:layout_constraintEnd_toEndOf="@+id/textViewEventDetailTitle"
+    app:layout_constraintHorizontal_bias="0.0"
+    app:layout_constraintStart_toStartOf="@+id/textViewEventDetailTitle"
+    app:layout_constraintTop_toBottomOf="@+id/textViewEventDetailTitle" />
+
+<TextView
+    android:id="@+id/textViewEventDetailDescription"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:maxLines="5"
+    android:text="TextView"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/imageViewEventDetailHeader"
+    tools:text="Descripcion" />
+
+<View
+    android:id="@+id/separator"
+    android:layout_width="fill_parent"
+    android:layout_height="2dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:background="@color/colorPrimaryDark"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/textViewEventDetailDescription" />
+
+<ImageView
+    android:id="@+id/imageViewEventDetailLocation"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    app:layout_constraintStart_toStartOf="@+id/separator"
+    app:layout_constraintTop_toBottomOf="@+id/separator"
+    app:srcCompat="@drawable/ic_pin" />
+
+<TextView
+    android:id="@+id/textViewEventDetailDistance"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:text="Distance"
+    app:layout_constraintBottom_toBottomOf="@+id/imageViewEventDetailLocation"
+    app:layout_constraintStart_toEndOf="@+id/imageViewEventDetailLocation"
+    app:layout_constraintTop_toTopOf="@+id/imageViewEventDetailLocation" />
+
+<com.google.android.gms.maps.MapView
+    android:id="@+id/mapViewEventDetail"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_marginBottom="16dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="16dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/imageViewEventDetailLocation" />
+
+<EditText
+    android:id="@+id/editTextEventDetailDate"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginStart="10dp"
+    android:ems="10"
+    android:inputType="date"
+    android:text="DD/MM/YYYY"
+    android:textColor="@color/common_google_signin_btn_text_dark_default"
+    android:textSize="14sp"
+    android:textStyle="bold"
+    app:layout_constraintBottom_toBottomOf="@+id/imageViewEventDetailHeader"
+    app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
