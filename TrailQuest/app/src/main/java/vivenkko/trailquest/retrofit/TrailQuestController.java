@@ -51,19 +51,19 @@ public interface TrailQuestController {
 
     //PETICIONES DE RUTAS
     @GET("/trails/list")
-    Call<List<Trail>> listTrails(@Header("Authorization") String token, @Path("id") String trail_id);
+    Call<List<Trail>> listTrails(@Header("Authorization") String token);
 
     @GET("/trails/filterMine")
-    Call<List<Trail>> listMyTrails(@Header("Authorization") String token, @Path("id") String trail_id);
+    Call<List<Trail>> listMyTrails(@Header("Authorization") String token);
 
     @POST("/trails/filterByDifficulty")
-    Call<List<Trail>> filterByDifficulty(@Header("Authorization") String token, @Body Trail difficultyTrail, @Path("id") String trail_id);
+    Call<List<Trail>> filterByDifficulty(@Header("Authorization") String token, @Body Trail difficultyTrail);
 
     @GET("/trails/ranking")
-    Call<List<Trail>> ranking(@Header("Authorization") String token, @Path("id") String trail_id);
+    Call<List<Trail>> ranking(@Header("Authorization") String token);
 
     @GET("/trails/favorites")
-    Call<List<Trail>> favorites(@Header("Authorization") String token, @Path("id") String trail_id);
+    Call<List<Trail>> favorites(@Header("Authorization") String token);
 
     @POST("/trails/makeFav/{id}")
     Call<Trail> makeFavorite(@Header("Authorization") String token, @Body Trail favoriteTrail, @Path("id") String trail_id);
@@ -94,18 +94,18 @@ public interface TrailQuestController {
 
     // PETICIONES DE EVENTOS
     @GET("/events/list}")
-    Call<Event> listEvents(@Header("Authorization") String token);
+    Call<List<Event>> listEvents(@Header("Authorization") String token);
 
     @GET("/events/following}")
-    Call<Event> listFollowing(@Header("Authorization") String token);
+    Call<List<Event>> listFollowing(@Header("Authorization") String token);
 
-    @POST("/trails/listByCity")
-    Call<Event> listByCity(@Header("Authorization") String token, @Body Event cityTrail, @Path("id") String event_id);
+    @POST("/events/listByCity")
+    Call<List<Event>> listByCity(@Header("Authorization") String token, @Body Event cityTrail);
 
-    @POST("/trails/follow/{id}")
+    @POST("/events/follow/{id}")
     Call<Event> follow(@Header("Authorization") String token, @Body Event followTrail, @Path("id") String event_id);
 
-    @DELETE("/trails/unfollow/{id}")
+    @DELETE("/events/unfollow/{id}")
     Call<Event> unfollow(@Header("Authorization") String token, @Body Event unfollowTrail, @Path("id") String event_id);
 
     @Multipart
@@ -123,7 +123,7 @@ public interface TrailQuestController {
     Call<Event> editEvent(@Header("Authorization") String token,
                           @Part("title") RequestBody title, @Part("description") RequestBody description , @Part MultipartBody.Part photo,
                           @Part("city") RequestBody city , @Part("location") RequestBody location,
-                          @Part("country") RequestBody country, @Part("date") RequestBody date);
+                          @Part("country") RequestBody country, @Part("date") RequestBody date, @Path("id") String event_id);
 
     @DELETE("/events/delete/{id}")
     Call<Event> deleteEvent(@Header("Authorization") String token, @Path("id") String event_id);

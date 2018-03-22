@@ -18,9 +18,9 @@ public class Event {
     @Expose
     private String description;
 
-    @SerializedName("city_event")
+    @SerializedName("place_event")
     @Expose
-    private String city;
+    private String place;
 
     @SerializedName("country_event")
     @Expose
@@ -42,10 +42,10 @@ public class Event {
 
     }
 
-    public Event(String title, String description, String city, String country, String location, String picture, Date date) {
+    public Event(String title, String description, String place, String country, String location, String picture, Date date) {
         this.title = title;
         this.description = description;
-        this.city = city;
+        this.place = place;
         this.country = country;
         this.location = location;
         this.picture = picture;
@@ -68,12 +68,12 @@ public class Event {
         this.description = description;
     }
 
-    public String getCity() {
-        return city;
+    public String getPlace() {
+        return place;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setPlace(String city) {
+        this.place = place;
     }
 
     public String getCountry() {
@@ -118,7 +118,7 @@ public class Event {
         if (title != null ? !title.equals(event.title) : event.title != null) return false;
         if (description != null ? !description.equals(event.description) : event.description != null)
             return false;
-        if (city != null ? !city.equals(event.city) : event.city != null) return false;
+        if (place != null ? !place.equals(event.place) : event.place != null) return false;
         if (country != null ? !country.equals(event.country) : event.country != null) return false;
         if (location != null ? !location.equals(event.location) : event.location != null)
             return false;
@@ -130,7 +130,7 @@ public class Event {
     public int hashCode() {
         int result = title != null ? title.hashCode() : 0;
         result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (city != null ? city.hashCode() : 0);
+        result = 31 * result + (place != null ? place.hashCode() : 0);
         result = 31 * result + (country != null ? country.hashCode() : 0);
         result = 31 * result + (location != null ? location.hashCode() : 0);
         result = 31 * result + (picture != null ? picture.hashCode() : 0);
@@ -143,7 +143,7 @@ public class Event {
         return "Event{" +
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", city='" + city + '\'' +
+                ", place='" + place + '\'' +
                 ", country='" + country + '\'' +
                 ", location='" + location + '\'' +
                 ", picture='" + picture + '\'' +

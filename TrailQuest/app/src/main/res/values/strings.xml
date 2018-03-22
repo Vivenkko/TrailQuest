@@ -13,4 +13,11 @@
     <string name="dialog_message_recover">Indique su email para obtener su contraseña</string>
     <string name="error_register_empty">Este campo no puede estar vacío</string>
 
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="dialog_recover_email">Escribe tu email para recuperar tu contraseña</string>
+    <string name="dialog_recover_pass">Recuperar contraseña</string>
+    <string name="dialog_recover_ok">Send</string>
+    <string name="dialog_recover_cancel">Cancel</string>
+    <string name="title_activity_ejemplo">ejemploActivity</string>
+
 </resources>

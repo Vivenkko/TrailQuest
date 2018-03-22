@@ -105,8 +105,8 @@ public class LoginActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void registrar(View view) {
-        startActivity(new Intent(this, SignUpActivity.class));
-    }
+//    public void registrar(View view) {
+//        startActivity(new Intent(this, SignUpActivity.class));
+//    }
 
 }
